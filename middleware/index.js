@@ -43,7 +43,7 @@ exports.checkRole = (arrayRoles) => {
         const {role} = req.user
 
         //validar si está este rol en el arreglo
-        if(arrayRoles.icludes(role)){
+        if(arrayRoles.includes(role)){
             next()
         } else {
             res.status(401).json({ erroMessage: "No tienes permiso para realizar esta acción" });
