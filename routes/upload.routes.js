@@ -15,13 +15,12 @@ const { verifyToken } = require("../middleware");
 //multiples
 router.post(
   "/uploads",
-  verifyToken,
   uploadCloud.array("images", 3),
   uploadProcess
 );
 
 //una sola
-router.post("/single", verifyToken, uploadCloud.single("image"), uploadProcess);
+router.post("/single", uploadCloud.single("image"), uploadProcess);
 
 //delete Image
 router.delete("/delete-image/:name", verifyToken, deleteImage);
